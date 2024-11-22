@@ -27,4 +27,7 @@ jobs:
       run: dotnet build src/Meme.Domain/Meme.Domain.sln --configuration Release --no-restore
 
     - name: Pack
-      run: dotnet pack src/Meme.Domain/Meme.Domain.sln --configuration Release --output nupkg
+      run: dotnet pack src/Meme.Domain/Meme.Domain.sln --configuration Release --output nupkg    
+        
+    - name: Publish to GitHub Packages 
+      run: dotnet nuget push nupkg/*.nupkg --source "github" --api-key ${{ secrets.GITHUB_TOKEN }} 
