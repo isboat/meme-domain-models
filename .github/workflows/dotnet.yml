@@ -21,7 +21,7 @@ jobs:
         dotnet-version: '8.0.x'  # Specify the .NET version you want to use
 
     - name: Install dependencies
-      run: dotnet restore
+      run: dotnet restore src/Meme.Domain/Meme.Domain.sln
 
     - name: Build
       run: dotnet build src/Meme.Domain/Meme.Domain.sln --configuration Release --no-restore
