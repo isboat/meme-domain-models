@@ -28,15 +28,3 @@ jobs:
 
     - name: Pack
       run: dotnet pack src/Meme.Domain/Meme.Domain.sln --configuration Release --output nupkg
-
-    - name: Commit changes
-      run: |
-        git config --global user.name 'github-actions'
-        git config --global user.email 'github-actions@github.com'
-        git add .
-        git commit -m "Automated build and package"
-
-    - name: Push changes
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: git push origin main
