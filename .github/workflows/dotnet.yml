@@ -26,8 +26,12 @@ jobs:
     - name: Build
       run: dotnet build src/Meme.Domain/Meme.Domain.sln --configuration Release --no-restore
 
+    - name: 'Get Version'
+      id: version
+      uses: battila7/get-version-action@v2
+      
     - name: Pack
-      run: dotnet pack src/Meme.Domain/Meme.Domain.sln --configuration Release --output nupkg    
+      run: dotnet pack src/Meme.Domain/Meme.Domain.sln --configuration Release --include-symbols -p:PackageVersion=${{ steps.version.outputs.version-without-v }} --output nupkg    
 
     - name: Add github as source
       run: dotnet nuget add source --username isboat --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/isboat/index.json"
