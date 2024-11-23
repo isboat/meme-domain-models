@@ -18,7 +18,7 @@ jobs:
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: '8.0.x'  # Specify the .NET version you want to use
+        dotnet-version: '8.0.x'  # Specify the .NET version you want to use.
 
     - name: Install dependencies
       run: dotnet restore src/Meme.Domain/Meme.Domain.sln
@@ -27,4 +27,10 @@ jobs:
       run: dotnet build src/Meme.Domain/Meme.Domain.sln --configuration Release --no-restore
 
     - name: Pack
-      run: dotnet pack src/Meme.Domain/Meme.Domain.sln --configuration Release --output nupkg
+      run: dotnet pack src/Meme.Domain/Meme.Domain.sln --configuration Release --output nupkg    
+
+    - name: Add github as source
+      run: dotnet nuget add source --username isboat --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/isboat/index.json"
+      
+    - name: Publish to GitHub Packages 
+      run: dotnet nuget push nupkg/*.nupkg --source "github" --api-key ${{ secrets.MYPAT }} 
