@@ -8,6 +8,9 @@
 
         public string? Name { get; set; }
 
+        /// <summary>
+        /// also called contract address
+        /// </summary>
         public string? CoinAddress { get; set; }
 
         public string? BuyUrl { get; set; }
