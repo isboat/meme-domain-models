@@ -8,8 +8,6 @@
 
         public string? Description { get; set; }
 
-        public string? ImgUrl { get; set; }
-
         public Dictionary<string, string>? Metadata { get; set; }
     }
 }
