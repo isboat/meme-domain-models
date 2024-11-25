@@ -11,7 +11,7 @@
         /// <summary>
         /// also called contract address
         /// </summary>
-        public string? CoinAddress { get; set; }
+        public string? ContractAddress { get; set; }
 
         public string? BuyUrl { get; set; }
 
@@ -26,5 +26,7 @@
         public PageStatus Status { get; set; }
 
         public Dictionary<string, string>? Metadata { get; set; }
+
+        public List<PageImageModel> Images { get; set; } = new List<PageImageModel>();
     }
 }
