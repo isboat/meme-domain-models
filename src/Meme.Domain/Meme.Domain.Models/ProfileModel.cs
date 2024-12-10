@@ -1,20 +1,16 @@
 ﻿namespace Meme.Domain.Models
 {
-    public class MemePageModel : IModelItem
+    public class ProfileModel : IModelItem
     {
         public string? Id { get; set; }
 
-        public List<string>? OwnerIds { get; set; }
-
         public string? Name { get; set; }
+
+        public string? Email { get; set; }
 
         public string? ContractAddress { get; set; }
 
         public string? BuyUrl { get; set; }
-
-        public string? PathUrl { get; set; }
-
-        public AboutSectionModel? About { get; set; }
 
         public HomeSectionModel? HomeSection { get; set; }
 
