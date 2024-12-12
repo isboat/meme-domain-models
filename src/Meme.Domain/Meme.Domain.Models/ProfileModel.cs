@@ -8,11 +8,13 @@
 
         public string? Email { get; set; }
 
+        public string? Headline { get; set; }
+
+        public string? Description { get; set; }
+
         public string? ContractAddress { get; set; }
 
         public string? BuyUrl { get; set; }
-
-        public HomeSectionModel? HomeSection { get; set; }
 
         public DateTime Created { get; set; }
 
