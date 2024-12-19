@@ -8,6 +8,8 @@ namespace Meme.Domain.Models.Settings
 {
     public class MessagingBusSettings
     {
-        public string ConnectionString { get; set; }
+        public string? ConnectionString { get; set; }
+
+        public string? QueueName { get; set; }
     }
 }
