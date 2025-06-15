@@ -14,6 +14,9 @@ namespace Meme.Domain.Models.TokenModels
         public string? Image { get; set; }
         public bool ShowName { get; set; }
         public string? CreatedOn { get; set; }
+
+        public DateTime CreatedDateTime { get; set; }
+
         public string? Website { get; set; }
         public RawTokenDataModel? RawData { get; set; }
     }
