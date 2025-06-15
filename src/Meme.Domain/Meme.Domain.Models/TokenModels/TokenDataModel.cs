@@ -8,7 +8,7 @@ namespace Meme.Domain.Models.TokenModels
 {
     public class TokenDataModel
     {
-        public string Id { get; set; }
+        public Guid Id { get; set; }
         public string? Name { get; set; }
         public string? Symbol { get; set; }
         public string? Description { get; set; }
